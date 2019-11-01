@@ -3,4 +3,4 @@
 var nombre = 'Sacha'
 var apellido = 'asada'
 
-console.log('hola ' + nombre + ' ' + apellido)
+var nombreMayus = nombre.toUpperCase()
