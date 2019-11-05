@@ -32,6 +32,45 @@ var precioVino = 200.3
 var total = Math.round(precioVino * 100 * 3) / 100
 
 /*Operacion para transformar a string con dos decimales*/
-var totalStr = total.toFixed(3);
+var totalStr = total.toFixed(3)
 /*Pasar de string a float*/
 var total2 = parseFloat(totalStr)
+
+//-----------CLASE 5-------------//
+var nombre = 'Sacha', edad = 28
+
+function imprimirEdad(n, e){
+	console.log(`${n} tiene ${e} anos`)
+}
+
+
+imprimirEdad()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
