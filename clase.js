@@ -61,7 +61,7 @@ function imprimirMayus(n){
 imprimirMayus(nombreSacha.nombre)
 */
 //-----------CLASE 7-------------//
-
+/*
 var nombreSacha = {
 	nombre: 'ande',
 	apellido: 'mar',
@@ -84,17 +84,27 @@ function imprimirMayus({nombre}){
 imprimirMayus(nombreSacha)
 //Forma nueva de pasar un valor como objeto
 imprimirMayus({nombre: 'pepito'})
+*/
+//-----------CLASE 8-------------//
+
+function imprimirMayus(persona){
+	//Declarar un atributo, con el valor de una key.
+	var {nombre} = persona
+	console.log(nombre.toUpperCase())
+}
+
+imprimirMayus({nombre:'andemar'})
 
 
 
+function nombreCompleto(persona){
+	var {nombre} = persona
+	var {edad} = persona
+	console.log(`Hola me llamo ${nombre} y mi edad es de ${edad} anos`)
+}
 
-
-
-
-
-
-
-
+nombreCompleto({nombre: 'ande', edad: 12})
+nombreCompleto({nombre: 'mar', edad: 21})
 
 
 
