@@ -108,7 +108,7 @@ nombreCompleto({nombre: 'mar', edad: 21})
 */
 
 //-----------CLASE 9-------------//
-
+/*
 //Con esta funcion, se retorna un nuevo objeto
 //Con el cumpleanos cambiado.
 var persona = {
@@ -126,8 +126,36 @@ function cumpleanos(persona){
 //Esto retornara un nuevo objeto, con
 //la edad+1, del objeto original.
 cumpleanos(persona)
-
+*/
 //-----------CLASE 10-------------//
+
+var x = 4, y = '4'
+
+//True, debido a que se comprara el valor
+//no el tipo.
+console.log(x == y)
+//False, debido a que se compara el valor
+//y el tipo, en este caso int y char.
+console.log(x === y)
+
+var pers1 = {
+	nombre: 'and'
+}
+
+var pers2 = {
+	nombre: 'and'
+}
+
+//Esto da false, ya que no apuntan al
+//mismo lugar en memoria.
+console.log(pers1 == pers2)
+
+pers2 = pers1
+//Esto da true, ya que apuntan al
+//mismo lugar en memoria.
+console.log(pers1 == pers2)
+
+
 //-----------CLASE 11-------------//
 //-----------CLASE 12-------------//
 
