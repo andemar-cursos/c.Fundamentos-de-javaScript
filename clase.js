@@ -128,7 +128,7 @@ function cumpleanos(persona){
 cumpleanos(persona)
 */
 //-----------CLASE 10-------------//
-
+/*
 var x = 4, y = '4'
 
 //True, debido a que se comprara el valor
@@ -154,10 +154,80 @@ pers2 = pers1
 //Esto da true, ya que apuntan al
 //mismo lugar en memoria.
 console.log(pers1 == pers2)
-
-
+*/
 //-----------CLASE 11-------------//
+
+var sacha = {
+	nombre: 'and',
+	apellido: 'mar',
+	edad: 22,
+	inge: true,
+	cocinero: false,
+	cantante: false,
+	dj: false,
+	guitarrista: false,
+	drone: true
+}
+
+function imprimirProfesiones(persona){
+	console.log(`${persona.nombre} es:`)
+	
+	if(persona.inge){
+		console.log('Ingeniero')
+	}
+	
+	if(persona.cocinero){
+		console.log('cocinero')
+	}
+	
+	if(persona.cantante){
+		console.log('cantante')
+	}
+	
+	if(persona.dj){
+		console.log('dj')
+	}
+	
+	if(persona.guitarrista){
+		console.log('guitarrista')
+	}
+	
+	if(persona.drone){
+		console.log('Vuela drone')
+	}
+}
+
+function imprimirSiEsMayorDeEdad(persona){
+	var res = ""
+	
+	if(persona.edad >= 18){
+		res = `${persona.nombre} es mayor de edad`
+	}else{
+		res = `${persona.nombre} es menor de edad`
+	}
+	
+	console.log(res)
+}
+
+imprimirProfesiones(sacha)
+imprimirSiEsMayorDeEdad(sacha)
+
 //-----------CLASE 12-------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
