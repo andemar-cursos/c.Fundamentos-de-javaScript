@@ -49,7 +49,8 @@ function imprimirEdad(n, e){
 
 imprimirEdad()
 */
-//-----------CLASE 6-------------//
+//-----------CLASE 6 y 7-------------//
+/*
 var nombre = 'Sacha'
 
 function imprimirMayus(n){
@@ -57,15 +58,32 @@ function imprimirMayus(n){
 	console.log(n)
 }
 
-imprimirMayus()
+imprimirMayus(nombreSacha.nombre)
+*/
+//-----------CLASE 7-------------//
 
+var nombreSacha = {
+	nombre: 'ande',
+	apellido: 'mar',
+	edad: 28
+}
 
+//Esta funcion es la clasica
+//function imprimirMayus(persona){
+//	var nombre = persona.nombre.toUpperCase()
+//	console.log(nombre)
+//}
 
+//Esta funcion, saca el atributo nombre del objeto.
+function imprimirMayus({nombre}){
+	nombre = nombre.toLocaleUpperCase()
+	console.log(nombre)
+}
 
-
-
-
-
+//Forma clasica de pasar un valor como objeto
+imprimirMayus(nombreSacha)
+//Forma nueva de pasar un valor como objeto
+imprimirMayus({nombre: 'pepito'})
 
 
 
