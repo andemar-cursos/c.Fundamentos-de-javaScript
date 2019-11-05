@@ -86,7 +86,7 @@ imprimirMayus(nombreSacha)
 imprimirMayus({nombre: 'pepito'})
 */
 //-----------CLASE 8-------------//
-
+/*
 function imprimirMayus(persona){
 	//Declarar un atributo, con el valor de una key.
 	var {nombre} = persona
@@ -105,6 +105,47 @@ function nombreCompleto(persona){
 
 nombreCompleto({nombre: 'ande', edad: 12})
 nombreCompleto({nombre: 'mar', edad: 21})
+*/
+
+//-----------CLASE 8-------------//
+
+//Con esta funcion, se retorna un nuevo objeto
+//Con el cumpleanos cambiado.
+var persona = {
+	nombre: 'ande',
+	edad: 22
+}
+
+function cumpleanos(persona){
+	return{
+		...persona,
+		edad: persona.edad+1
+	}
+}
+
+//Esto retornara un nuevo objeto, con
+//la edad+1, del objeto original.
+cumpleanos(persona)
+
+//-----------CLASE 9-------------//
+//-----------CLASE 10-------------//
+//-----------CLASE 11-------------//
+//-----------CLASE 12-------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
