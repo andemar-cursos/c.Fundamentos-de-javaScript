@@ -107,7 +107,7 @@ nombreCompleto({nombre: 'ande', edad: 12})
 nombreCompleto({nombre: 'mar', edad: 21})
 */
 
-//-----------CLASE 8-------------//
+//-----------CLASE 9-------------//
 
 //Con esta funcion, se retorna un nuevo objeto
 //Con el cumpleanos cambiado.
@@ -127,7 +127,6 @@ function cumpleanos(persona){
 //la edad+1, del objeto original.
 cumpleanos(persona)
 
-//-----------CLASE 9-------------//
 //-----------CLASE 10-------------//
 //-----------CLASE 11-------------//
 //-----------CLASE 12-------------//
