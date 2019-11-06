@@ -307,7 +307,7 @@ for(var i = 1; i <= DIAS_DEL_ANIO; i++){
 console.log(`Al final del ano ${ande.nombre} pesa ${ande.peso.toFixed(1)}kg`)
 */
 //-----------CLASE 15-------------//
-
+/*
 var ande = {
 	nombre: 'ande',
 	apellido: 'mar',
@@ -339,8 +339,63 @@ while(ande.peso > META){
 }
 
 console.log(`pasaron ${dias} dias, hasta que ${ande.nombre} adelgazo ${META}kg`)
+*/
+//-----------CLASE 16-------------//
+
+var contador = 0
 
 
+const llueve = () => Math.random() < 0.25
+
+do{
+	contador++
+}while(!llueve())
+	
+if(contador == 1){
+	console.log(`Fui a ver si llovia ${contador} ves`)	
+}else
+	console.log(`Fui a ver si llovia ${contador} veces`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-----------CLASE 17-------------//
+//-----------CLASE 18-------------//
+//-----------CLASE 19-------------//
+//-----------CLASE 20-------------//
+//-----------CLASE 21-------------//
+//-----------CLASE 22-------------//
+//-----------CLASE 23-------------//
 
 
 
