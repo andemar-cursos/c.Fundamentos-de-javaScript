@@ -278,7 +278,7 @@ function permitirAcceso(persona){
 }
 */
 //-----------CLASE 14-------------//
-
+/*
 var ande = {
 	nombre: 'ande',
 	apellido: 'mar',
@@ -305,10 +305,40 @@ for(var i = 1; i <= DIAS_DEL_ANIO; i++){
 
 //Con .toFixed(#), se mostraran los # decimales, despues de la ,.
 console.log(`Al final del ano ${ande.nombre} pesa ${ande.peso.toFixed(1)}kg`)
+*/
+//-----------CLASE 15-------------//
 
+var ande = {
+	nombre: 'ande',
+	apellido: 'mar',
+	edad: 22,
+	peso: 82
+}
 
+const INCREMENTO_PESO = 0.3
+const DIAS_DEL_ANIO = 365
+var dias = 0
+//Esto define el peso meta a alcanzar en X dias.
+const META = ande.peso-3
+const aumentarPeso  = persona => persona.peso+=INCREMENTO_PESO
+const disminuirPeso = persona => persona.peso-=INCREMENTO_PESO
 
+const comeMucho 	 = () => Math.random() < 0.30
+const realizaDeporte = () => Math.random() < 0.40
 
+console.log(`Al inicio del ano ${ande.nombre} pesa ${ande.peso}kg`)
+
+while(ande.peso > META){
+	if(comeMucho()){
+	   aumentarPeso(ande)
+	}
+	if(realizaDeporte()){
+		disminuirPeso(ande)
+	}
+	dias++;
+}
+
+console.log(`pasaron ${dias} dias, hasta que ${ande.nombre} adelgazo ${META}kg`)
 
 
 
