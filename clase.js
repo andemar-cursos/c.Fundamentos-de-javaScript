@@ -341,7 +341,7 @@ while(ande.peso > META){
 console.log(`pasaron ${dias} dias, hasta que ${ande.nombre} adelgazo ${META}kg`)
 */
 //-----------CLASE 16-------------//
-
+/*
 var contador = 0
 
 
@@ -355,41 +355,57 @@ if(contador == 1){
 	console.log(`Fui a ver si llovia ${contador} ves`)	
 }else
 	console.log(`Fui a ver si llovia ${contador} veces`)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 //-----------CLASE 17-------------//
+
+//Pregunta al usuario por un dato
+var signo = prompt(`¿Cual es tu signo?`)
+
+switch(signo){
+	case 'acuario':
+		console.log('cosa de acuario')
+		break
+	case 'piscis':
+		console.log('cosa de piscis')
+		break
+	case 'geminis':
+	case 'géminis':
+		console.log('Con y sin tilde, geéminis')
+		break
+	default:
+		console.log('Mal')
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------CLASE 18-------------//
 //-----------CLASE 19-------------//
 //-----------CLASE 20-------------//
