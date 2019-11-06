@@ -237,7 +237,7 @@ function imprimirSiEsMayorDeEdad(persona){
 }
 */
 //-----------CLASE 13-------------//
-
+/*
 var ande = {
 	nombre: 'ande',
 	edad: 22
@@ -276,6 +276,42 @@ function permitirAcceso(persona){
 		console.log("ACCESO DENEGADO")
 	}
 }
+*/
+//-----------CLASE 14-------------//
+
+var ande = {
+	nombre: 'ande',
+	apellido: 'mar',
+	edad: 22,
+	peso: 82
+}
+
+const INCREMENTO_PESO = 0.2
+const DIAS_DEL_ANIO = 365
+
+console.log(`Al inicio del ano ${ande.nombre} pesa ${ande.peso}kg`)
+
+const aumentarPeso  = persona => persona.peso+=INCREMENTO_PESO
+const disminuirPeso = persona => persona.peso-=INCREMENTO_PESO
+
+for(var i = 1; i <= DIAS_DEL_ANIO; i++){
+	var random = Math.random()
+	if(random < 0.25){
+		aumentarPeso(ande)
+	}else if(random < 0.5){
+		disminuirPeso(ande)
+	}
+}
+
+//Con .toFixed(#), se mostraran los # decimales, despues de la ,.
+console.log(`Al final del ano ${ande.nombre} pesa ${ande.peso.toFixed(1)}kg`)
+
+
+
+
+
+
+
 
 
 
