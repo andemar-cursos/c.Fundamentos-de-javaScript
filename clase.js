@@ -156,7 +156,7 @@ pers2 = pers1
 console.log(pers1 == pers2)
 */
 //-----------CLASE 11-------------//
-
+/*
 var sacha = {
 	nombre: 'and',
 	apellido: 'mar',
@@ -211,13 +211,30 @@ function imprimirSiEsMayorDeEdad(persona){
 
 imprimirProfesiones(sacha)
 imprimirSiEsMayorDeEdad(sacha)
-
+*/
 //-----------CLASE 12-------------//
 
+var ande = {
+	nombre: 'ande',
+	edad: 22
+}
 
+var dean = {
+	nombre:'dean',
+	edad: 12
+}
 
+function esMayorDeEdad(persona){
+	return (persona.edad >= 18)
+}
 
-
+function imprimirSiEsMayorDeEdad(persona){
+	if(esMayorDeEdad(persona)){
+		console.log(`${persona.nombre} es mayor de edad`)
+	}else{
+		console.log(`${persona.nombre} es menor de edad`)		
+	}
+}
 
 
 
