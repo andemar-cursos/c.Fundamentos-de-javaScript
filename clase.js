@@ -213,7 +213,7 @@ imprimirProfesiones(sacha)
 imprimirSiEsMayorDeEdad(sacha)
 */
 //-----------CLASE 12-------------//
-
+/*
 var ande = {
 	nombre: 'ande',
 	edad: 22
@@ -235,13 +235,47 @@ function imprimirSiEsMayorDeEdad(persona){
 		console.log(`${persona.nombre} es menor de edad`)		
 	}
 }
+*/
+//-----------CLASE 13-------------//
+
+var ande = {
+	nombre: 'ande',
+	edad: 22
+}
+
+var dean = {
+	nombre:'dean',
+	edad: 12
+}
+
+const MAYORIA_DE_EDAD = 18
+
+////Esta es la forma clasica de la funcion.
+//var esMayorDeEdad = function (persona){
+//	return (persona.edad >= 18)
+//}
+
+//Esta es un arrow function, la cual se guarda la funcion
+//en una variable. Como es una funcion que retorna, no necesita return.
+
+//NOMBRE DE LA VAR     PARAMETROS     CUERPO DE LA FUNC
+const esMayorDeEdad =  ({edad})=>  edad >= MAYORIA_DE_EDAD
+const esMenorDeEdad =  ({edad})=>  edad <= MAYORIA_DE_EDAD
+
+function imprimirSiEsMayorDeEdad(persona){
+	if(esMayorDeEdad(persona)){
+		console.log(`${persona.nombre} es mayor de edad`)
+	}else{
+		console.log(`${persona.nombre} es menor de edad`)		
+	}
+}
 
 
-
-
-
-
-
+function permitirAcceso(persona){
+	if(esMenorDeEdad(persona)){
+		console.log("ACCESO DENEGADO")
+	}
+}
 
 
 
