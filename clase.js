@@ -439,7 +439,7 @@ var personasAltas = personas.filter(esAlta)
 console.log(personasAltas)
 */
 //-----------CLASE 20-------------//
-
+/*
 var ande = {
 	nombre: 'ande',
 	apellido: 'mar',
@@ -484,26 +484,69 @@ const alturaToCms = persona =>({
 var personasCms = personas.map(alturaToCms)
 
 console.log(personasCms)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 //-----------CLASE 21-------------//
+
+var ande = {
+	nombre: 'ande',
+	apellido: 'mar',
+	altura: 1.76,
+	cantidadDeLibros:64
+}
+
+var jul = {
+	nombre: 'jul',
+	apellido: 'io',
+	altura: 1.75,
+	cantidadDeLibros:53
+}
+
+var sinon = {
+	nombre: 'shinon',
+	apellido: 'asada',
+	altura: 1.61,
+	cantidadDeLibros:34
+}
+
+
+var personas = [ande, jul, sinon]
+
+
+//Le llega por parametros el acumulado y el objeto a obtener datos
+const reducer = (acum, {cantidadDeLibros}) => acum + cantidadDeLibros
+
+
+//Se pasa por parametros una funcion que define la
+//reduccion y el valor inicial.
+var totalLibros = personas.reduce(reducer, 0)
+
+
+console.log(`Todos las personas tienen ${totalLibros} libros`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------CLASE 22-------------//
 //-----------CLASE 23-------------//
