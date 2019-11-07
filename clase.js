@@ -406,7 +406,7 @@ for(var i = 0; i < personas.length; i++){
 }
 */
 //-----------CLASE 19-------------//
-
+/*
 var ande = {
 	nombre: 'ande',
 	apellido: 'mar',
@@ -437,22 +437,73 @@ const esAlta = ({altura}) => altura >= alta
 var personasAltas = personas.filter(esAlta)
 
 console.log(personasAltas)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 //-----------CLASE 20-------------//
+
+var ande = {
+	nombre: 'ande',
+	apellido: 'mar',
+	altura: 1.76
+}
+
+var jul = {
+	nombre: 'jul',
+	apellido: 'io',
+	altura: 1.75
+}
+
+var sinon = {
+	nombre: 'shinon',
+	apellido: 'asada',
+	altura: 1.61
+}
+
+var personas = [ande, jul, sinon]
+
+////Esto sirve, para cambiar los datos al objeto original
+//const alturaToCms = persona =>{
+//	persona.altura *= 100
+//	return persona
+//}
+
+////Este metodo sirve para crear un nuevo objeto con la altura
+////Cambiada
+//const alturaToCms = persona =>{
+//	return{
+//		...persona,
+//		altura: persona.altura*100
+//	}
+//}
+
+//Esto es lo mismo de arriba, pero sin return escrito.
+const alturaToCms = persona =>({
+		...persona,
+		altura: persona.altura*100	
+})
+
+var personasCms = personas.map(alturaToCms)
+
+console.log(personasCms)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------CLASE 21-------------//
 //-----------CLASE 22-------------//
 //-----------CLASE 23-------------//
