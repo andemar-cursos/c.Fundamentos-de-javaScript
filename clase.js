@@ -524,7 +524,7 @@ var totalLibros = personas.reduce(reducer, 0)
 console.log(`Todos las personas tienen ${totalLibros} libros`)
 */
 //-----------CLASE 22-------------//
-
+/*
 const personaAlta = 1.70
 
 //Constructor de persona
@@ -561,6 +561,45 @@ sinon.soyAlta()
 //Llamo a las funciones de ande
 ande.saludar()
 ande.soyAlta()
+*/
+//-----------CLASE 25-------------//
+
+function Persona(nombre, apellido, altura){
+	this.nombre = nombre
+	this.apellido = apellido
+	this.altura = altura
+}
+
+function Desarrollador(nombre, apellido, altura){
+	this.nombre = nombre
+	this.apellido = apellido
+	this.altura = altura
+}
+
+//Esta funcion, hace la herencia de padre, al hijo
+function heredaDe(prototipoHijo, prototipoPadre){
+	var fn = function() {}
+	fn.prototype = prototipoPadre.prototype
+	prototipoHijo.prototype = new fn
+	prototipoHijo.prototype.constructor = prototipoHijo
+}
+
+Persona.prototype.saludar = function(){
+	console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`)
+}
+
+Persona.prototype.soyAlta = function(){
+	console.log(`Yo ${this.nombre} ${this.apellido}, soy una persona ` + altura(this))
+}
+
+//Primero se hace la herencia, luego se "pisa" la funcion saludar, para cambiarla
+heredaDe(Desarrollador, Persona)
+
+//Esta funcion sobreEscribe la funcion saludar de persona
+Desarrollador.prototype.saludar = function(){
+	console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy desarrollador`)
+}
+////////------NO FUNCIONO LA FUNCION SOYALTA------////////
 
 
 
@@ -577,13 +616,3 @@ ande.soyAlta()
 
 
 
-
-
-
-
-
-
-
-
-
-//-----------CLASE 23-------------//
