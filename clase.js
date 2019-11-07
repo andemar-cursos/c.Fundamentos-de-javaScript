@@ -563,7 +563,7 @@ ande.saludar()
 ande.soyAlta()
 */
 //-----------CLASE 25-------------//
-
+/*
 function Persona(nombre, apellido, altura){
 	this.nombre = nombre
 	this.apellido = apellido
@@ -600,7 +600,66 @@ Desarrollador.prototype.saludar = function(){
 	console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy desarrollador`)
 }
 ////////------NO FUNCIONO LA FUNCION SOYALTA------////////
+*/
+//-----------CLASE 26-------------//
 
+class Persona{
+	constructor(nombre, apellido, altura){
+		this.nombre = nombre
+		this.apellido = apellido
+		this.altura = altura
+	}
+
+	saludar(){
+		console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`)
+	}
+}
+
+//Para heredar de un prototipo se usa extends + prototipo.
+class Desarrollador extends Persona{
+	constructor(nombre, apellido, altura){
+		//Se ---TIENE--- que invocar a super, que es el constructor de la clase padre.
+		super(nombre, apellido, altura)
+	}
+	//Aca se sobre escribe el saludar de la clase padre.
+	saludar(){
+		console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy desarrollador`)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-----------CLASE 27-------------//
+//-----------CLASE 28-------------//
+//-----------CLASE 29-------------//
+//-----------CLASE 30-------------//
+//-----------CLASE 31-------------//
+//-----------CLASE 32-------------//
+//-----------CLASE 33-------------//
+//-----------CLASE 34-------------//
+//-----------CLASE 35-------------//
+//-----------CLASE 36-------------//
 
 
 
