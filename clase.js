@@ -486,7 +486,7 @@ var personasCms = personas.map(alturaToCms)
 console.log(personasCms)
 */
 //-----------CLASE 21-------------//
-
+/*
 var ande = {
 	nombre: 'ande',
 	apellido: 'mar',
@@ -522,31 +522,68 @@ var totalLibros = personas.reduce(reducer, 0)
 
 
 console.log(`Todos las personas tienen ${totalLibros} libros`)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 //-----------CLASE 22-------------//
+
+const personaAlta = 1.70
+
+//Constructor de persona
+function Persona(nombre, apellido, altura){
+	this.nombre = nombre
+	this.apellido = apellido
+	this.altura = altura
+}
+
+const altura = ({altura}) => {
+	if(altura >= personaAlta){
+		return 'alta'
+	}else
+		return 'baja'
+}
+
+
+//Con esta linea creo funciones.
+Persona.prototype.saludar = function(){
+	console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`)
+}
+
+Persona.prototype.soyAlta = function(){
+	console.log(`Yo ${this.nombre} ${this.apellido}, soy una persona ` + altura(this))
+}
+
+//Inicializo la persona=>sinon
+var sinon = new Persona('asada', 'shinon', 1.61)
+var ande  = new Persona('ande' , 'mar'   , 1.76)
+
+//Llamo a las funcion de sinon 
+sinon.saludar()
+sinon.soyAlta()
+//Llamo a las funciones de ande
+ande.saludar()
+ande.soyAlta()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------CLASE 23-------------//
