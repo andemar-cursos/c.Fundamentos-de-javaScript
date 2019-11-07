@@ -357,7 +357,7 @@ if(contador == 1){
 	console.log(`Fui a ver si llovia ${contador} veces`)
 */
 //-----------CLASE 17-------------//
-
+/*
 //Pregunta al usuario por un dato
 var signo = prompt(`¿Cual es tu signo?`)
 
@@ -374,6 +374,35 @@ switch(signo){
 		break
 	default:
 		console.log('Mal')
+}
+*/
+//-----------CLASE 18-------------//
+
+var ande = {
+	nombre: 'ande',
+	apellido: 'mar',
+	altura: 1.76
+}
+
+var jul = {
+	nombre: 'jul',
+	apellido: 'io',
+	altura: 1.75
+}
+
+var sinon = {
+	nombre: 'shinon',
+	apellido: 'asada',
+	altura: 1.61
+}
+
+
+
+var personas = [ande, jul, sinon]
+
+
+for(var i = 0; i < personas.length; i++){
+	console.log(personas[i].altura)
 }
 
 
@@ -396,44 +425,8 @@ switch(signo){
 
 
 
-
-
-
-
-
-
-
-
-
-
-//-----------CLASE 18-------------//
 //-----------CLASE 19-------------//
 //-----------CLASE 20-------------//
 //-----------CLASE 21-------------//
 //-----------CLASE 22-------------//
 //-----------CLASE 23-------------//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
