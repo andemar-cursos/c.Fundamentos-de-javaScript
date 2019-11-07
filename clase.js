@@ -377,7 +377,7 @@ switch(signo){
 }
 */
 //-----------CLASE 18-------------//
-
+/*
 var ande = {
 	nombre: 'ande',
 	apellido: 'mar',
@@ -404,28 +404,54 @@ var personas = [ande, jul, sinon]
 for(var i = 0; i < personas.length; i++){
 	console.log(personas[i].altura)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 //-----------CLASE 19-------------//
+
+var ande = {
+	nombre: 'ande',
+	apellido: 'mar',
+	altura: 1.76
+}
+
+var jul = {
+	nombre: 'jul',
+	apellido: 'io',
+	altura: 1.75
+}
+
+var sinon = {
+	nombre: 'shinon',
+	apellido: 'asada',
+	altura: 1.61
+}
+
+const alta = 1.70
+
+var personas = [ande, jul, sinon]
+
+const esAlta = ({altura}) => altura >= alta
+
+//Se crea una variable contenedora de los objetos filtrados
+//se llama al metodo filter y se pasa por parametors una
+//funcion que filtrara el array.
+var personasAltas = personas.filter(esAlta)
+
+console.log(personasAltas)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------CLASE 20-------------//
 //-----------CLASE 21-------------//
 //-----------CLASE 22-------------//
