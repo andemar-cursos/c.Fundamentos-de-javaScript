@@ -840,7 +840,7 @@ obtenerPj(1)
 	.catch(onError)
 */
 //-----------CLASE 35-------------//
-
+/*
 const API_URL = 'https://swapi.co/api/'
 const PEOPLE_URL = 'people/:id'
 const opts = {crossDomain: true}
@@ -878,32 +878,62 @@ Promise
 //var promesas = ids.map(function (id){
 //	return obtenerPj(id)
 //})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 //-----------CLASE 36-------------//
+
+const API_URL = 'https://swapi.co/api/'
+const PEOPLE_URL = 'people/:id'
+const opts = {crossDomain: true}
+
+function obtenerPj(id){
+	return new Promise((resolve, reject) => {
+		const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+		
+		$.get(url, opts, function(data){
+			resolve(data)
+		})
+		.fail(() => reject(id))
+	})
+}
+
+function onError(id){
+	console.log(`Sucedio un error al obtener el personaje ${id}`)
+}
+
+async function obtenerPersonajes(){
+	var ids = [1,2,3,4,5,6,7]
+	var promesas = ids.map(id => obtenerPj(id))
+	try{
+		var personajes = await Promise.all(promesas)
+		console.log(personajes)
+	}catch(id){
+		onError(id)
+	}
+}
+
+obtenerPersonajes()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
