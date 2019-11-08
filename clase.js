@@ -703,71 +703,91 @@ const saludoPj = ({name}) => console.log(`Hola, soy ${name}`)
 //}
 
 //Se pasa por parametros la url de la API
-//Las opciones, donde se define que la API esta en unaweb 3ra
+//Las opciones, donde se define que la API esta en una web 3ra
 //La funcion que "tratara" los datos obtenidos.
 //Llegan 3 datos, 1. un objeto con los datos. 2. Un estado en string. 3. un jqXHR
 $.get(swUrl, opts, saludoPj)
 */
 //-----------CLASE 30-------------//
-
+/*
 const API_URL = 'https://swapi.co/api/'
 const PEOPLE_URL = 'people/:id'
 const opts = {crossDomain: true}
 
-
-
 const saludoPj = ({name}) => console.log(`Hola, soy ${name}`)
-
-
 
 function obtenerPj(id){
 	const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
 	$.get(url, opts, saludoPj)
 }
 
-
 obtenerPj(1)
 obtenerPj(2)
 obtenerPj(3)
 obtenerPj(4)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 //-----------CLASE 31-------------//
+const API_URL = 'https://swapi.co/api/'
+const PEOPLE_URL = 'people/:id'
+const opts = {crossDomain: true}
+
+function obtenerPj(id, callback){
+	const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+	
+	$.get(url, opts, function({name}){
+		console.log(`Hola, soy ${name}`)
+		
+		if(callback){
+			callback()
+		}
+	})
+}
+
+obtenerPj(1, function(){
+	obtenerPj(2, function(){
+		obtenerPj(3, function(){
+			obtenerPj(4)
+		})
+	})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------CLASE 32-------------//
 //-----------CLASE 33-------------//
 //-----------CLASE 34-------------//
