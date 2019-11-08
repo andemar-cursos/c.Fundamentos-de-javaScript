@@ -734,19 +734,31 @@ const opts = {crossDomain: true}
 function obtenerPj(id, callback){
 	const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
 	
-	$.get(url, opts, function({name}){
-		console.log(`Hola, soy ${name}`)
-		
-		if(callback){
-			callback()
-		}
+	//Arrow Function
+	$.get(url, opts, callback)
+	 .fail(() => {
+		console.log(`Sucedio un error. No se puedo obtener el pj ${id}`)
 	})
+	
+	////Classic function
+//	$.get(url, opts, callback).fail(function(){
+//		console.log(`Sucedio un error. No se puedo obtener el pj ${id}`)
+//	})
 }
 
-obtenerPj(1, function(){
-	obtenerPj(2, function(){
-		obtenerPj(3, function(){
-			obtenerPj(4)
+//-----CALLBACK-HELL'S-----//
+obtenerPj(1, function(pj){
+	console.log(`Hola, soy ${pj.name}`)
+	
+	obtenerPj(2, function(pj){
+		console.log(`Hola, soy ${pj.name}`)
+		
+		obtenerPj(3, function(pj){
+			console.log(`Hola, soy ${pj.name}`)
+			
+			obtenerPj(4, function(pj){
+				console.log(`Hola, soy ${pj.name}`)
+			})
 		})
 	})
 })
