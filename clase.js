@@ -687,7 +687,7 @@ ande.saludar(responderSaludo)
 sinon.saludar(responderSaludo)
 */
 //-----------CLASE 29-------------//
-
+/*
 const API_URL = 'https://swapi.co/api/'
 const PEOPLE_URL = 'people/:id'
 
@@ -707,49 +707,66 @@ const saludoPj = ({name}) => console.log(`Hola, soy ${name}`)
 //La funcion que "tratara" los datos obtenidos.
 //Llegan 3 datos, 1. un objeto con los datos. 2. Un estado en string. 3. un jqXHR
 $.get(swUrl, opts, saludoPj)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//-----------CLASE 29-------------//
+*/
 //-----------CLASE 30-------------//
+
+const API_URL = 'https://swapi.co/api/'
+const PEOPLE_URL = 'people/:id'
+const opts = {crossDomain: true}
+
+
+
+const saludoPj = ({name}) => console.log(`Hola, soy ${name}`)
+
+
+
+function obtenerPj(id){
+	const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+	$.get(url, opts, saludoPj)
+}
+
+
+obtenerPj(1)
+obtenerPj(2)
+obtenerPj(3)
+obtenerPj(4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------CLASE 31-------------//
 //-----------CLASE 32-------------//
 //-----------CLASE 33-------------//
