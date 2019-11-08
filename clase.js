@@ -727,6 +727,7 @@ obtenerPj(3)
 obtenerPj(4)
 */
 //-----------CLASE 31-------------//
+/*
 const API_URL = 'https://swapi.co/api/'
 const PEOPLE_URL = 'people/:id'
 const opts = {crossDomain: true}
@@ -762,46 +763,74 @@ obtenerPj(1, function(pj){
 		})
 	})
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//-----------CLASE 32-------------//
+*/
 //-----------CLASE 33-------------//
+
+const API_URL = 'https://swapi.co/api/'
+const PEOPLE_URL = 'people/:id'
+const opts = {crossDomain: true}
+
+function obtenerPj(id){
+	
+	return new Promise((resolve, reject) => {
+		const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+		
+		$.get(url, opts, function(data){
+			resolve(data)
+		})
+		.fail(() => reject(id))
+	})
+	
+}
+
+
+function onError(id){
+	console.log(`Sucedio un error al obtener el personaje ${id}`)
+}
+
+obtenerPj(1)
+	.then(function(pj){
+		console.log(`El personaje 1 es ${pj.name}`)
+	})
+	//Con esta linea, se ejecuta la funcion onError, pasando los
+	//parametros automaticamente.
+	.catch(onError)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------CLASE 34-------------//
 //-----------CLASE 35-------------//
 //-----------CLASE 36-------------//
