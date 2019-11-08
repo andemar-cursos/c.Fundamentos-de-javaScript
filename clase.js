@@ -686,8 +686,27 @@ var sinon = new Desarrollador('asada', 'shinon', 1.61)
 ande.saludar(responderSaludo)
 sinon.saludar(responderSaludo)
 */
-//-----------CLASE 28-------------//
+//-----------CLASE 29-------------//
 
+const API_URL = 'https://swapi.co/api/'
+const PEOPLE_URL = 'people/:id'
+
+const swUrl=`${API_URL}${PEOPLE_URL.replace(':id', 1)}`
+const opts = {crossDomain: true}
+
+//Arraw Function | El name llega del objeto obtenido del $.get
+const saludoPj = ({name}) => console.log(`Hola, soy ${name}`)
+
+////Clasic function
+//const saludoPj = function(Pj){
+//	console.log(console.log(`Hola, soy ${Pj.name}`))
+//}
+
+//Se pasa por parametros la url de la API
+//Las opciones, donde se define que la API esta en unaweb 3ra
+//La funcion que "tratara" los datos obtenidos.
+//Llegan 3 datos, 1. un objeto con los datos. 2. Un estado en string. 3. un jqXHR
+$.get(swUrl, opts, saludoPj)
 
 
 
