@@ -628,7 +628,7 @@ class Desarrollador extends Persona{
 }
 */
 //-----------CLASE 27-------------//
-
+/*
 class Persona{
 	constructor(nombre, apellido, altura){
 		this.nombre = nombre
@@ -685,20 +685,50 @@ var sinon = new Desarrollador('asada', 'shinon', 1.61)
 
 ande.saludar(responderSaludo)
 sinon.saludar(responderSaludo)
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 //-----------CLASE 28-------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------CLASE 29-------------//
 //-----------CLASE 30-------------//
 //-----------CLASE 31-------------//
@@ -707,18 +737,3 @@ sinon.saludar(responderSaludo)
 //-----------CLASE 34-------------//
 //-----------CLASE 35-------------//
 //-----------CLASE 36-------------//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
