@@ -602,7 +602,7 @@ Desarrollador.prototype.saludar = function(){
 ////////------NO FUNCIONO LA FUNCION SOYALTA------////////
 */
 //-----------CLASE 26-------------//
-
+/*
 class Persona{
 	constructor(nombre, apellido, altura){
 		this.nombre = nombre
@@ -626,31 +626,78 @@ class Desarrollador extends Persona{
 		console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy desarrollador`)
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 //-----------CLASE 27-------------//
+
+class Persona{
+	constructor(nombre, apellido, altura){
+		this.nombre = nombre
+		this.apellido = apellido
+		this.altura = altura
+	}
+
+	saludar(fn){
+		//Esto equivale a:
+		var {nombre, apellido} = this
+		//Esto de aca.
+		//var nombre = this.nombre
+		//var apellido = this.apellido
+		console.log(`Hola, me llamo ${nombre} ${apellido}`)
+		//Si pasaron algun valor en fn, es true
+		if(fn){
+			fn(nombre, apellido, false)
+		}
+	}
+}
+
+//Para heredar de un prototipo se usa extends + prototipo.
+class Desarrollador extends Persona{
+	constructor(nombre, apellido, altura){
+		//Se ---TIENE--- que invocar a super, que es el constructor de la clase padre.
+		super(nombre, apellido, altura)
+	}
+	//Aca se sobre escribe el saludar de la clase padre.
+	saludar(fn){
+		//Esto equivale a:
+		var {nombre, apellido} = this
+		//Esto de aca.
+		//var nombre = this.nombre
+		//var apellido = this.apellido
+		console.log(`Hola, me llamo ${nombre} ${apellido} y soy desarrollador`)
+		if(fn){
+			fn(nombre, apellido, true)
+		}
+	}
+}
+
+
+function responderSaludo(nombre, apellido, esDev){
+	console.log(`Buen dia ${nombre} ${apellido}`)
+	if(esDev){
+		console.log(`Ah mira, no sabia que eras dev`)
+	}
+}
+
+
+var ande  = new Persona('ande' , 'mar'   , 1.76)
+var sinon = new Desarrollador('asada', 'shinon', 1.61)
+
+
+ande.saludar(responderSaludo)
+sinon.saludar(responderSaludo)
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------CLASE 28-------------//
 //-----------CLASE 29-------------//
 //-----------CLASE 30-------------//
