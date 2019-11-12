@@ -14,6 +14,8 @@ class Juego{
 	}
 	
 	inicializar(){
+		//Con esta linea se expecifica que el this, siempre sera el juego mismo.
+		this.elegirColor = this.elegirColor.bind(this)
 		btnEmpezar.classList.add('hide')
 		this.nivel = 1
 		//Es un array de 'colores' los cuales son los div de html que forman el circulo.
@@ -39,6 +41,7 @@ class Juego{
 	
 	siguienteNivel(){
 		this.iluminarSecuencia()
+		this.agregarEventosClick()
 	}
 	
 	transformarNumeroAColor(numero){
@@ -71,6 +74,22 @@ class Juego{
 	
 	apagarColor(color){
 		this.colores[color].classList.remove('light')
+	}
+	
+	//Esta funcion agrega el eventListener a los div del DOM.
+	agregarEventosClick(){
+		//Esta linea lo que hace es expecificar con .bind(this) quien es el this (el juego) y no
+		//pasar el <div> como this principal.
+		//this.colores.celeste.addEventListener('click', this.elegirColor.bind(this))
+		this.colores.celeste.addEventListener('click', this.elegirColor)
+		this.colores.verde.addEventListener('click', this.elegirColor)
+		this.colores.violeta.addEventListener('click', this.elegirColor)
+		this.colores.naranja.addEventListener('click', this.elegirColor)
+	}
+	
+	elegirColor(ev){
+		console.log(this)
+		console.log(ev)
 	}
 }
 
