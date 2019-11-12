@@ -880,7 +880,7 @@ Promise
 //})
 */
 //-----------CLASE 36-------------//
-
+/*
 const API_URL = 'https://swapi.co/api/'
 const PEOPLE_URL = 'people/:id'
 const opts = {crossDomain: true}
@@ -912,8 +912,17 @@ async function obtenerPersonajes(){
 }
 
 obtenerPersonajes()
+*/
+//--------------TEST HOISTING-----------//
 
+let test = 'x'
 
+function prueba(){
+	console.log(test)
+	let test = 'y'
+}
+
+prueba()
 
 
 

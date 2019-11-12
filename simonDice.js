@@ -15,7 +15,7 @@ class Juego{
 	
 	inicializar(){
 		btnEmpezar.classList.add('hide')
-		this.nivel = 6
+		this.nivel = 1
 		//Es un array de 'colores' los cuales son los div de html que forman el circulo.
 		//Al llamarse del mismo modo, no se necesita hacer 'celeste: celeste'
 		//Siendo el primer celeste la key y el segundo el valor a añadir.
@@ -56,7 +56,7 @@ class Juego{
 	
 	iluminarSecuencia(){
 		for(let i = 0; i < this.nivel; i++){
-			const color = this.transformarNumeroAColor(this.secuencia[i])
+			let color = this.transformarNumeroAColor(this.secuencia[i])
 			//Esta linea lo que hace es iluminar cada color, cada 1s * i.
 			//Cada color dependera de su posicion en el array.
 			//El primer color se demorara 0s, el segundo 1s....
