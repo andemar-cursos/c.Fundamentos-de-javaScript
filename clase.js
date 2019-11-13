@@ -914,7 +914,7 @@ async function obtenerPersonajes(){
 obtenerPersonajes()
 */
 //--------------TEST HOISTING-----------//
-
+/*
 let test = 'x'
 
 function prueba(){
@@ -923,16 +923,44 @@ function prueba(){
 }
 
 prueba()
+*/
+//--------------TEST THIS-----------//
+
+const ande = {
+	name: 'ande',
+	apellido: 'mar'
+}
 
 
+function saludar (saludo = 'Hola'){
+	//Este this, hace referencia a ande (objeto con atributo name)
+	console.log(`${saludo}, mi nombre es ${this.name}`)
+}
 
+//Si uno ejecuta esta funcion a secas, el this.name, hara referencia
+//a window, dando como resultado undefined
+console.log('Saludar sin expecificar this. (contexto)')
+saludar()
+console.log(' ')
 
-
-
-
-
-
-
+//Si uno ejecuta esta funcion, mediante call o apply, y expecifica el
+//this, la funciona obtendra el this especifico
+//(ande) <-- NO ES PARAMETRO, ES LA EXPECIFICACION AL THIS (CONTEXTO)
+console.log('Saludar expecificando el this')
+console.log(' ')
+console.log('Llamado con call')
+saludar.call(ande)
+console.log(' ')
+console.log('Llamado con apply')
+saludar.apply(ande)
+console.log(' ')
+//Si uno quiere mandar parametros ademas del this, se hace despues de
+//la coma.
+console.log('Llamado con call + parametros')
+saludar.call(ande, 'Tonces')
+console.log(' ')
+console.log('Llamado con apply + parametros')
+saludar.apply(ande, ['Tonces'])
 
 
 
