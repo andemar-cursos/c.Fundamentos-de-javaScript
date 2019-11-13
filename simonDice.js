@@ -1,14 +1,15 @@
 
 
-const celeste = document.getElementById('celeste')
-const violeta = document.getElementById('violeta')
-const naranja = document.getElementById('naranja')
-const verde   = document.getElementById('verde')
-const btnEmpezar = document.getElementById('btnEmpezar')
-const ULTIMO_NIVEL = 10
+const celeste 	   = document.getElementById('celeste')
+const violeta 	   = document.getElementById('violeta')
+const naranja 	   = document.getElementById('naranja')
+const verde   	   = document.getElementById('verde')
+const btnEmpezar   = document.getElementById('btnEmpezar')
+const ULTIMO_NIVEL = 6
 
 class Juego{
 	constructor(){
+		this.inicializar = this.inicializar.bind(this)
 		this.inicializar()
 		this.generarSecuencia()
 		//Se aplica un setTimeout para no comenzar al instate que se oprime el boton jugar
@@ -20,7 +21,9 @@ class Juego{
 		this.siguienteNivel = this.siguienteNivel.bind(this)
 		//Con esta linea se expecifica que el this, siempre sera el juego mismo.
 		this.elegirColor = this.elegirColor.bind(this)
-		btnEmpezar.classList.add('hide')
+		
+		this.toggleBtnEmpezar()
+		
 		this.nivel = 1
 		//Es un array de 'colores' los cuales son los div de html que forman el circulo.
 		//Al llamarse del mismo modo, no se necesita hacer 'celeste: celeste'
@@ -31,6 +34,13 @@ class Juego{
 			naranja,
 			verde
 		}
+	}
+	
+	toggleBtnEmpezar(){
+		if(btnEmpezar.classList.contains('hide')){
+			btnEmpezar.classList.remove('hide')
+		}else
+			btnEmpezar.classList.add('hide')
 	}
 	
 	generarSecuencia(){
@@ -124,7 +134,7 @@ class Juego{
 				this.nivel++
 				this.eliminarEventosClick()
 				if(this.nivel === (ULTIMO_NIVEL + 1)){
-					//Gano!!
+					this.ganoElJuego()
 				}else{
 					//Como el setTimeout lo maneja window a la hora de llamar
 					//a la funcion "siguienteNivel" no existe, por tal razon
@@ -140,36 +150,30 @@ class Juego{
 				}
 			}
 		}else{
-			//perdio
+			this.perdioElJuego()
 		}
 	}
+	
+	
+	ganoElJuego(){
+		//Swal (De la librearia sweetalert) es una promesa, lo cual despues de
+		//que el usuario oprima el boton ok, se ejecutara el .then
+		swal('Simon dice','Felicitaciones, Ganaste el juego!','success')
+		.then(this.inicializar)
+	}
+	
+	perdioElJuego(){
+		//Swal (De la librearia sweetalert) es una promesa, lo cual despues de
+		//que el usuario oprima el boton ok, se ejecutara el .then
+		swal('Simon dice','Perdiste :(, Intentalo de nuevo!','error')
+		.then(() => {
+			this.eliminarEventosClick()
+			this.inicializar()
+		})
+	}
 }
-
-
-
-
-
-
-
-
-
-
 
 
 function empezarJuego(){
 	window.juego = new Juego()
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
