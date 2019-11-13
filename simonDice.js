@@ -5,15 +5,19 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde   = document.getElementById('verde')
 const btnEmpezar = document.getElementById('btnEmpezar')
+const ULTIMO_NIVEL = 10
 
 class Juego{
 	constructor(){
 		this.inicializar()
 		this.generarSecuencia()
-		this.siguienteNivel()
+		//Se aplica un setTimeout para no comenzar al instate que se oprime el boton jugar
+		setTimeout(this.siguienteNivel, 500)
 	}
 	
 	inicializar(){
+		//Con esta linea se expecifica que el this, siempre sera el juego mismo.
+		this.siguienteNivel = this.siguienteNivel.bind(this)
 		//Con esta linea se expecifica que el this, siempre sera el juego mismo.
 		this.elegirColor = this.elegirColor.bind(this)
 		btnEmpezar.classList.add('hide')
@@ -36,10 +40,11 @@ class Juego{
 		// Math.floor(---) Redondea el valor a la cota inferior.
 		//Math.random() * 4, generara un valor numerico entre 0 y 3.99...9.
 		//Lo que hace, es guardar 10 numeros aleatorios del 0-3
-		this.secuencia = new Array(10).fill(0).map(n => Math.floor(Math.random() * 4))
+		this.secuencia = new Array(ULTIMO_NIVEL).fill(0).map(n => Math.floor(Math.random() * 4))
 	}
 	
 	siguienteNivel(){
+		this.subnivel = 0
 		this.iluminarSecuencia()
 		this.agregarEventosClick()
 	}
@@ -54,6 +59,19 @@ class Juego{
 				return 'naranja'
 			case 3:
 				return 'verde'
+		}
+	}
+	
+	transformarColorANumero(color){
+		switch (color){
+			case 'celeste':
+				return 0
+			case 'violeta':
+				return 1
+			case 'naranja':
+				return 2
+			case 'verde':
+				return 3
 		}
 	}
 	
@@ -87,9 +105,43 @@ class Juego{
 		this.colores.naranja.addEventListener('click', this.elegirColor)
 	}
 	
+	eliminarEventosClick(){
+		this.colores.celeste.removeEventListener('click', this.elegirColor)
+		this.colores.verde.removeEventListener('click', this.elegirColor)
+		this.colores.violeta.removeEventListener('click', this.elegirColor)
+		this.colores.naranja.removeEventListener('click', this.elegirColor)
+	}
+	
 	elegirColor(ev){
-		console.log(this)
-		console.log(ev)
+		const nombreColor = ev.target.dataset.color
+		const numeroColor = this.transformarColorANumero(nombreColor)
+		this.iluminarColor(nombreColor)
+		//Esta linea lo que hace es comparar el color tocado por el usuario
+		//por el color guardado en la secuencia en la posicion correspondiente
+		if(numeroColor === this.secuencia[this.subnivel]){
+			this.subnivel++
+			if(this.subnivel === this.nivel){
+				this.nivel++
+				this.eliminarEventosClick()
+				if(this.nivel === (ULTIMO_NIVEL + 1)){
+					//Gano!!
+				}else{
+					//Como el setTimeout lo maneja window a la hora de llamar
+					//a la funcion "siguienteNivel" no existe, por tal razon
+					//expecifica en el bind, que el this, es el juego.
+					//No se coloca en la funcion los () ya que no es un llamado,
+					//si no una referencia a la funcion que tendra que llamar despues de
+					//1.5k milisegundos.
+					////setTimeout(this.siguienteNivel.bind(this),1500)
+					
+					//Si en el inicializar() se especifica que el this de siguiente nivel
+					//es el juego, no se necesita hacer .bind(this) en los llamados posteriores.
+					setTimeout(this.siguienteNivel, 1500)
+				}
+			}
+		}else{
+			//perdio
+		}
 	}
 }
 
